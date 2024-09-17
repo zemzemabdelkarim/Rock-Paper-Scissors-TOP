@@ -12,6 +12,7 @@ function appendChildren(container, items) {
 
 function addButtons(container) {
     btnContainer = document.createElement("div");
+    btnContainer.setAttribute("class", "buttonContainer");
     btns = [];
     btns.push(document.createElement("button"));
     btns[0].textContent = "Rock";
@@ -95,15 +96,15 @@ function playGame(humanChoise){
 
     emtyContainer(winnerContainer);
 
-    let winnerLoger = document.createElement("h1");
+    let winnerLogger = document.createElement("h1");
     switch(win){
-        case 1: winnerContainer.textContent = "You win !!";humanScore++;break;
-        case 0: winnerContainer.textContent = "Thats even, you will make it next time";break;
-        case -1: winnerContainer.textContent = "Sorry you didn't win yet, next time I am sure";computerScore++;break;
-        default: winnerContainer.textContent = "What just happend ??!!??"
+        case 1: winnerLogger.textContent = "You win !!";humanScore++;break;
+        case 0: winnerLogger.textContent = "Thats even, you will make it next time";break;
+        case -1: winnerLogger.textContent = "Sorry you didn't win yet, next time I am sure";computerScore++;break;
+        default: winnerLogger.textContent = "What just happend ??!!??"
     }
 
-    winnerContainer.appendChild(winnerLoger);
+    winnerContainer.appendChild(winnerLogger);
     //gameDiv.appendChild(winnerContainer);
     displayScore();
 }
